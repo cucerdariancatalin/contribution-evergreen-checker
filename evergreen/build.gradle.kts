@@ -18,7 +18,7 @@ plugins {
   id("com.android.application")
   id("kotlin-android")
   kotlin("kapt")
-  id("com.github.triplet.play") version "3.4.0"
+  id("com.github.triplet.play") version "3.6.0"
 }
 
 val versionMajor = 0
