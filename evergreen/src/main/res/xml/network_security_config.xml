@@ -15,7 +15,7 @@
 -->
 
 <network-security-config>
-  <base-config cleartextTrafficPermitted="false" />
+  <base-config cleartextTrafficPermitted="false"/>
   <domain-config cleartextTrafficPermitted="true">
     <domain includeSubdomains="true">localhost</domain>
     <!-- IP address of the host on which the Android Emulator runs. -->
