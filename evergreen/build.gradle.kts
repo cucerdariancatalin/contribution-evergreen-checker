@@ -26,7 +26,7 @@ val versionMinor = 11
 val versionPatch = 5
 
 android {
-  compileSdkVersion(30)
+  compileSdkVersion(31)
   defaultConfig {
     applicationId = "app.evergreen"
     minSdkVersion(23)
