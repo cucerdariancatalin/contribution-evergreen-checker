@@ -53,7 +53,6 @@ android {
       isShrinkResources = true
       isCrunchPngs = false
       isZipAlignEnabled = true
-      ext["alwaysUpdateBuildId"] = false // Crashlytics.
       proguardFiles(
         getDefaultProguardFile("proguard-android-optimize.txt"),
         "evergreen.pro", "moshi.pro", "kotlin.pro", "moshi-kotlin.pro"
