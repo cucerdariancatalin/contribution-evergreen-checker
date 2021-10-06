@@ -28,11 +28,11 @@ val versionMinor = 11
 val versionPatch = 5
 
 android {
-  compileSdkVersion(29)
+  compileSdkVersion(30)
   defaultConfig {
     applicationId = "app.evergreen"
     minSdkVersion(23)
-    targetSdkVersion(29)
+    targetSdkVersion(30)
     versionCode = versionMajor * 10000 + versionMinor * 100 + versionPatch
     versionName = "${versionMajor}.${versionMinor}.${versionPatch}"
     vectorDrawables.useSupportLibrary = true
