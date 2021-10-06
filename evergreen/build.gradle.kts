@@ -26,12 +26,12 @@ val versionMinor = 11
 val versionPatch = 5
 
 android {
-  compileSdkVersion(31)
+  compileSdk = 31
+
   defaultConfig {
     applicationId = "app.evergreen"
-    minSdkVersion(23)
-    // Cannot update targetSdkVersion until `androidx.work:work-runtime:2.6.0` is stable.
-    targetSdkVersion(30)
+    minSdk = 21
+    targetSdk = 30  // Cannot update targetSdkVersion until `androidx.work:work-runtime:2.6.0` is stable.
     versionCode = versionMajor * 10000 + versionMinor * 100 + versionPatch
     versionName = "${versionMajor}.${versionMinor}.${versionPatch}"
     vectorDrawables.useSupportLibrary = true
@@ -52,7 +52,6 @@ android {
       isMinifyEnabled = true
       isShrinkResources = true
       isCrunchPngs = false
-      isZipAlignEnabled = true
       proguardFiles(
         getDefaultProguardFile("proguard-android-optimize.txt"),
         "evergreen.pro", "moshi.pro", "kotlin.pro", "moshi-kotlin.pro"
@@ -60,18 +59,6 @@ android {
       resValue("string", "app_version", "${defaultConfig.versionName}")
       signingConfig = signingConfigs.getByName("appSigningKey")
     }
-  }
-
-  compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
-  }
-}
-
-tasks.withType<KotlinCompile>().configureEach {
-  kotlinOptions {
-    allWarningsAsErrors = true
-    jvmTarget = "1.8"
   }
 }
 

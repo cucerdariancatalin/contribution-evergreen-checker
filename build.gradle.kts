@@ -12,21 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-  extra["kotlin_version"] = "1.5.0"
+  extra["kotlinVersion"] = "1.5.21"
 
   repositories {
     google()
-    jcenter()
-
+    mavenCentral()
   }
+
   dependencies {
     classpath("com.android.tools.build:gradle:7.0.2")
-    classpath(kotlin("gradle-plugin", version = rootProject.extra["kotlin_version"] as String?))
+    classpath(kotlin("gradle-plugin", version = rootProject.extra["kotlinVersion"] as String?))
     // NOTE: Do not place your application dependencies here; they belong
     // in the individual module build.gradle files
   }
@@ -35,12 +33,6 @@ buildscript {
 allprojects {
   repositories {
     google()
-    jcenter()
-  }
-}
-
-tasks.withType<KotlinCompile> {
-  kotlinOptions {
-    jvmTarget = "1.8"
+    mavenCentral()
   }
 }
