@@ -30,6 +30,7 @@ android {
   defaultConfig {
     applicationId = "app.evergreen"
     minSdkVersion(23)
+    // Cannot update targetSdkVersion until `androidx.work:work-runtime:2.6.0` is stable.
     targetSdkVersion(30)
     versionCode = versionMajor * 10000 + versionMinor * 100 + versionPatch
     versionName = "${versionMajor}.${versionMinor}.${versionPatch}"
