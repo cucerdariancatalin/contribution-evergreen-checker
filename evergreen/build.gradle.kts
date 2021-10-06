@@ -13,8 +13,6 @@
 // limitations under the License.
 
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import java.io.FileInputStream
-import java.util.*
 
 plugins {
   id("com.android.application")
