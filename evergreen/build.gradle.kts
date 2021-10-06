@@ -80,7 +80,7 @@ tasks.withType<KotlinCompile>().configureEach {
 dependencies {
   // Kotlin.
   implementation(kotlin("stdlib", org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION))
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1")
 
   // AndroidX
   implementation("androidx.core:core-ktx:1.6.0")
