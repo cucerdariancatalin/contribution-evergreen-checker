@@ -84,7 +84,7 @@ dependencies {
 
   // AndroidX
   implementation("androidx.core:core-ktx:1.6.0")
-  implementation("androidx.constraintlayout:constraintlayout:2.0.4")
+  implementation("androidx.constraintlayout:constraintlayout:2.1.1")
   implementation("androidx.leanback:leanback:1.0.0")
   implementation("androidx.work:work-runtime:2.6.0")
 
