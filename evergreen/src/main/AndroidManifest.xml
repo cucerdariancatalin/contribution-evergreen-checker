@@ -21,6 +21,11 @@
   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
   <uses-permission android:name="android.permission.INTERNET"/>
 
+  <!-- Needed for core functionality of this app -->
+  <uses-permission
+    android:name="android.permission.QUERY_ALL_PACKAGES"
+    tools:ignore="QueryAllPackagesPermission"/>
+
   <uses-feature
     android:name="android.software.leanback"
     android:required="true"/>
