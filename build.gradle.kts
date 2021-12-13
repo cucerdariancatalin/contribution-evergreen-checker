@@ -23,7 +23,7 @@ buildscript {
   }
 
   dependencies {
-    classpath("com.android.tools.build:gradle:7.0.2")
+    classpath("com.android.tools.build:gradle:7.0.4")
     classpath(kotlin("gradle-plugin", version = rootProject.extra["kotlinVersion"] as String?))
     // NOTE: Do not place your application dependencies here; they belong
     // in the individual module build.gradle files
