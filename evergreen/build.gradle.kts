@@ -39,7 +39,7 @@ android {
 
   signingConfigs {
     register("appSigningKey") {
-      isV2SigningEnabled = true
+      enableV2Signing = true
       storeFile = file("../signing-keys.keystore")
       storePassword = System.getenv("KEYSTORE_PASSWORD")
       keyAlias = "evergreen"
