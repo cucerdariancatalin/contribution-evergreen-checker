@@ -29,7 +29,7 @@ android {
   defaultConfig {
     applicationId = "app.evergreen"
     minSdk = 21
-    targetSdk = 30  // Cannot update targetSdkVersion until `androidx.work:work-runtime:2.6.0` is stable.
+    targetSdk = 31
     versionCode = versionMajor * 10000 + versionMinor * 100 + versionPatch
     versionName = "${versionMajor}.${versionMinor}.${versionPatch}"
     vectorDrawables.useSupportLibrary = true
