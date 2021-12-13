@@ -68,7 +68,7 @@ dependencies {
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
 
   // AndroidX
-  implementation("androidx.core:core-ktx:1.6.0")
+  implementation("androidx.core:core-ktx:1.7.0")
   implementation("androidx.constraintlayout:constraintlayout:2.1.1")
   implementation("androidx.leanback:leanback:1.0.0")
   implementation("androidx.work:work-runtime:2.7.1")
