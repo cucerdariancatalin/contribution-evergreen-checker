@@ -1,0 +1,73 @@
+{
+  "updatables": [
+    {
+      "kind": "SYSTEM_BUILD",
+      "latestProd": {
+        "versionName": "CONFIDENTIAL"
+      }
+    },
+    {
+      "id": "com.google.android.katniss",
+      "kind": "APK",
+      "latestProd": {
+        "versionName": "6.0.20211211.0"
+      }
+    },
+    {
+      "id": "com.google.android.apps.tv.launcherx",
+      "kind": "APK",
+      "latestProd": {
+        "versionName": "1.0.414575996-dogfood"
+      }
+    },
+    {
+      "id": "app.evergreen",
+      "kind": "APK",
+      "latestProd": {
+        "versionName": "0.11.5"
+      }
+    },
+    {
+      "id": "com.google.android.gms",
+      "kind": "APK",
+      "latestProd": {
+        "versionName": "21.45.16 (180306-414021728)"
+      }
+    },
+    {
+      "id": "com.google.android.tv.remote.service",
+      "kind": "APK",
+      "latestProd": {
+        "versionName": "5.1.415324728"
+      }
+    },
+    {
+      "id": "com.android.vending",
+      "kind": "APK",
+      "latestProd": {
+        "versionName": "28.3.16-21 [8] [PR] 413990378"
+      }
+    },
+    {
+      "id": "com.google.android.apps.mediashell",
+      "kind": "APK",
+      "latestProd": {
+        "versionName": "1.56.276477"
+      }
+    },
+    {
+      "id": "com.google.android.apps.tv.dreamx",
+      "kind": "APK",
+      "latestProd": {
+        "versionName": "2.0.3.406985518"
+      }
+    },
+    {
+      "id": "com.google.android.youtube.tv",
+      "kind": "APK",
+      "latestProd": {
+        "versionName": "2.15.006"
+      }
+    }
+  ]
+}
