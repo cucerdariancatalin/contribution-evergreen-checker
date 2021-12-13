@@ -26,5 +26,5 @@ jobs:
         ./decrypt-secrets.sh
         echo "KEYSTORE_PASSWORD=$KEYSTORE_PASSWORD" >> $GITHUB_ENV
 
-    - name: Gradle Publish APK
-      run: ./gradlew publishReleaseApk
+    - name: Gradle Publish Bundle
+      run: ./gradlew publishReleaseBundle
