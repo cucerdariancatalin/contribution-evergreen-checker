@@ -53,7 +53,7 @@ gpg --quiet --batch --yes --decrypt \
 
 ### Publish APK to Alpha
 ```shell
-./gradlew publishReleaseApk
+./gradlew publishReleaseBundle
 ```
 
 ### Promote APK from Alpha to Beta & Staged Rollout
