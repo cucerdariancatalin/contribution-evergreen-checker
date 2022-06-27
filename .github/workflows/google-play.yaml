@@ -18,6 +18,9 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
 
+    - name: Validate Gradle Wrapper
+      uses: gradle/wrapper-validation-action@v1
+
     - name: Read GitHub Secrets & Decrypt Encrypted Files
       env:
         GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
