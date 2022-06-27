@@ -2,8 +2,13 @@ title: Evergreen
 description: A debug tool for Android TV devices
 url: 'https://google.github.io/evergreen-checker'
 repository: google/evergreen-checker
-theme: null
 theme_color: '#9cc269'
+
+author:
+  name: Manas Tungare
+  twitter: Manas
+
+theme: null
 include:
   - '*.txt'
   - .well-known
@@ -11,9 +16,6 @@ exclude:
   - '*.sh'
   - '*.yml'
   - CNAME
-  - Gemfile
-  - Gemfile.lock
   - README.md
-  - vendor
 github:
   - metadata
