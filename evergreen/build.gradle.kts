@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.config.KotlinCompilerVersion
+
 // Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -62,7 +64,7 @@ android {
 
 dependencies {
   // Kotlin.
-  implementation(kotlin("stdlib", org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION))
+  implementation(kotlin("stdlib", KotlinCompilerVersion.VERSION))
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
 
   // AndroidX
