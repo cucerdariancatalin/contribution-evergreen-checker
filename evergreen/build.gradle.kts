@@ -79,7 +79,7 @@ dependencies {
   implementation("com.squareup.moshi:moshi-adapters:1.13.0")
 
   // Third Party Libraries
-  implementation("com.squareup.okhttp3:okhttp:4.9.1")
+  implementation("com.squareup.okhttp3:okhttp:4.9.3")
   implementation("io.coil-kt:coil:1.3.2")
 }
 
