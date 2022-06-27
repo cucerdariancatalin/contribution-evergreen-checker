@@ -80,7 +80,7 @@ dependencies {
 
   // Third Party Libraries
   implementation("com.squareup.okhttp3:okhttp:4.9.3")
-  implementation("io.coil-kt:coil:1.3.2")
+  implementation("io.coil-kt:coil:2.1.0")
 }
 
 play {
