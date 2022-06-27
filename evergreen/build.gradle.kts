@@ -21,9 +21,9 @@ plugins {
   id("com.github.triplet.play") version "3.6.0"
 }
 
-val versionMajor = 0
-val versionMinor = 12
-val versionPatch = 1
+val versionMajor = 1
+val versionMinor = 0
+val versionPatch = 0
 
 android {
   compileSdk = 33
