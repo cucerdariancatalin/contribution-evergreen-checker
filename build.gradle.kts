@@ -15,7 +15,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-  extra["kotlinVersion"] = "1.5.31"
+  extra["kotlinVersion"] = "1.6.21"
 
   repositories {
     google()
@@ -23,7 +23,7 @@ buildscript {
   }
 
   dependencies {
-    classpath("com.android.tools.build:gradle:7.0.4")
+    classpath("com.android.tools.build:gradle:7.2.1")
     classpath(kotlin("gradle-plugin", version = rootProject.extra["kotlinVersion"] as String?))
     // NOTE: Do not place your application dependencies here; they belong
     // in the individual module build.gradle files

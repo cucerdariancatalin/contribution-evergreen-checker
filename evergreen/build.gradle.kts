@@ -72,9 +72,9 @@ dependencies {
   implementation("androidx.work:work-runtime:2.7.1")
 
   // Moshi
-  api("com.squareup.moshi:moshi:1.12.0")
-  api("com.squareup.moshi:moshi-adapters:1.10.0")
-  kapt("com.squareup.moshi:moshi-kotlin-codegen:1.12.0")
+  kapt("com.squareup.moshi:moshi-kotlin-codegen:1.13.0")
+  implementation("com.squareup.moshi:moshi-kotlin:1.13.0")
+  implementation("com.squareup.moshi:moshi-adapters:1.13.0")
 
   // Third Party Libraries
   implementation("com.squareup.okhttp3:okhttp:4.9.1")
