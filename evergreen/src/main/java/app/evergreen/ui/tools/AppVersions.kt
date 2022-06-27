@@ -22,7 +22,9 @@ import androidx.core.graphics.drawable.toBitmap
 import androidx.core.graphics.drawable.toDrawable
 import app.evergreen.R
 import app.evergreen.config.EvergreenConfig
-import app.evergreen.config.Kind
+import app.evergreen.config.Kind.APK
+import app.evergreen.config.Kind.REMOTE_FIRMWARE
+import app.evergreen.config.Kind.SYSTEM_BUILD
 import app.evergreen.config.Updatable
 import app.evergreen.config.Version
 import app.evergreen.extensions.drawable
@@ -36,7 +38,7 @@ import app.evergreen.ui.MAIN_IMAGE_SIZE_DP
 class AppVersions(private val context: Context, private val dialogOpener: DialogOpener) : Tool {
 
   private fun getInstalledVersion(updatable: Updatable): String? = when (updatable.kind) {
-    Kind.APK -> {
+    APK -> {
       try {
         @Suppress("DEPRECATION")
         context.packageManager.getPackageInfo(updatable.id!!, 0).versionName
@@ -44,8 +46,8 @@ class AppVersions(private val context: Context, private val dialogOpener: Dialog
         null  // App not installed, so it does not have a version name yet.
       }
     }
-    Kind.SYSTEM_BUILD -> Build.DISPLAY
-    Kind.REMOTE_FIRMWARE -> null
+    SYSTEM_BUILD -> Build.DISPLAY
+    REMOTE_FIRMWARE -> null
   }
 
   override val titleText: String

@@ -30,7 +30,9 @@ import androidx.leanback.widget.PresenterSelector
 import app.evergreen.R
 import app.evergreen.R.color
 import app.evergreen.config.EvergreenConfig
-import app.evergreen.config.Kind.*
+import app.evergreen.config.Kind.APK
+import app.evergreen.config.Kind.REMOTE_FIRMWARE
+import app.evergreen.config.Kind.SYSTEM_BUILD
 import app.evergreen.config.Updatable
 import app.evergreen.extensions.color
 import app.evergreen.extensions.drawable
@@ -39,7 +41,11 @@ import app.evergreen.extensions.toTargetSize
 import app.evergreen.ui.DialogOpener
 import app.evergreen.ui.MAIN_IMAGE_SIZE_DP
 import app.evergreen.ui.QrCodeFragment
-import app.evergreen.ui.updates.AbstractUpdatableViewModel.VersionStatus.*
+import app.evergreen.ui.updates.AbstractUpdatableViewModel.VersionStatus.CONFIGURATION_ERROR
+import app.evergreen.ui.updates.AbstractUpdatableViewModel.VersionStatus.NOT_INSTALLED
+import app.evergreen.ui.updates.AbstractUpdatableViewModel.VersionStatus.VERSION_IS_LATEST
+import app.evergreen.ui.updates.AbstractUpdatableViewModel.VersionStatus.VERSION_NEWER_THAN_LATEST
+import app.evergreen.ui.updates.AbstractUpdatableViewModel.VersionStatus.VERSION_OLDER_THAN_LATEST
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

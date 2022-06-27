@@ -15,18 +15,19 @@
 package app.evergreen.background
 
 import android.content.Context
-import androidx.work.*
-import app.evergreen.data.Repo
+import androidx.work.Constraints
+import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.NetworkType
+import androidx.work.Operation
+import androidx.work.PeriodicWorkRequest
+import androidx.work.WorkManager
+import androidx.work.Worker
+import androidx.work.WorkerParameters
 import app.evergreen.services.AppServices.repo
 import app.evergreen.services.log
 import java.util.concurrent.TimeUnit
 
-class UpdateCheckWork(
-  private val context: Context,
-  workerParams: WorkerParameters
-) :
-  Worker(context, workerParams) {
-
+class UpdateCheckWork(context: Context, workerParams: WorkerParameters) : Worker(context, workerParams) {
   override fun doWork(): Result {
     repo.refreshFromServer()
     return Result.success()

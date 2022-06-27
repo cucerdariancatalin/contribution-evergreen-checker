@@ -15,7 +15,7 @@
 package app.evergreen.data
 
 import android.content.Context
-import android.os.Build.*
+import android.os.Build.MODEL
 import android.util.Log
 import androidx.annotation.AnyThread
 import androidx.lifecycle.LiveData
@@ -36,7 +36,7 @@ class Repo(private val context: Context) {
 
   private val errorsLiveData: MutableLiveData<FetchError> = MutableLiveData()
 
-  val deviceUniqueId = MODEL
+  val deviceUniqueId: String = MODEL
 
   @get:AnyThread
   val evergreenConfig: LiveData<EvergreenConfig>

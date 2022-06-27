@@ -23,9 +23,7 @@ import app.evergreen.config.Updatable
 import app.evergreen.extensions.drawable
 import app.evergreen.services.AppServices.opener
 
-class ApkViewModel(context: Context, updatable: Updatable) :
-  AbstractUpdatableViewModel(context, updatable) {
-
+class ApkViewModel(context: Context, updatable: Updatable) : AbstractUpdatableViewModel(context, updatable) {
   override val installedVersion: String?
     get() = if (updatable.id == null) {
       null
@@ -66,8 +64,4 @@ class ApkViewModel(context: Context, updatable: Updatable) :
   }
 
   override fun onUpdate() = opener.openPlayStore(updatable.id!!)
-
-  companion object {
-    private const val TAG = "ApkPresenter"
-  }
 }

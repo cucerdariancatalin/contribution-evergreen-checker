@@ -31,5 +31,3 @@ fun Bitmap.toTargetSize(targetWidth: Int, targetHeight: Int): Bitmap {
   canvas.drawBitmap(scaledSourceBitmap, left, top, null)
   return targetBitmap
 }
-
-private const val TAG = "Bitmap"

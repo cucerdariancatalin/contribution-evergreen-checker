@@ -18,7 +18,11 @@ import android.content.Context
 import android.graphics.drawable.Drawable
 import app.evergreen.R
 import app.evergreen.config.Updatable
-import app.evergreen.ui.updates.AbstractUpdatableViewModel.VersionStatus.*
+import app.evergreen.ui.updates.AbstractUpdatableViewModel.VersionStatus.CONFIGURATION_ERROR
+import app.evergreen.ui.updates.AbstractUpdatableViewModel.VersionStatus.NOT_INSTALLED
+import app.evergreen.ui.updates.AbstractUpdatableViewModel.VersionStatus.VERSION_IS_LATEST
+import app.evergreen.ui.updates.AbstractUpdatableViewModel.VersionStatus.VERSION_NEWER_THAN_LATEST
+import app.evergreen.ui.updates.AbstractUpdatableViewModel.VersionStatus.VERSION_OLDER_THAN_LATEST
 
 abstract class AbstractUpdatableViewModel(
   protected val context: Context,

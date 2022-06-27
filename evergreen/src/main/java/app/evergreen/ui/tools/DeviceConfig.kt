@@ -18,7 +18,10 @@ import android.app.ActivityManager
 import android.content.ComponentName
 import android.content.Context
 import android.graphics.drawable.Drawable
-import android.os.Build.*
+import android.os.Build.BRAND
+import android.os.Build.DEVICE
+import android.os.Build.MODEL
+import android.os.Build.PRODUCT
 import android.service.voice.VoiceInteractionService
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.graphics.drawable.toDrawable

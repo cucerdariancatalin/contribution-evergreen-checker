@@ -14,15 +14,15 @@
 
 package app.evergreen.services
 
+import java.io.IOException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.CacheControl
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import java.io.IOException
 
 class HttpClient {
-  val okHttpClient: OkHttpClient by lazy {
+  private val okHttpClient: OkHttpClient by lazy {
     OkHttpClient.Builder()
       .followRedirects(true)
       .followSslRedirects(true)

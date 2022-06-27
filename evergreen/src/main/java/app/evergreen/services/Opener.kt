@@ -16,13 +16,17 @@ package app.evergreen.services
 
 import android.content.Context
 import android.content.Intent
+import android.content.Intent.ACTION_VIEW
+import android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK
+import android.content.Intent.FLAG_ACTIVITY_MULTIPLE_TASK
+import android.content.Intent.FLAG_ACTIVITY_NO_HISTORY
 import android.net.Uri
 import app.evergreen.extensions.safeStartActivity
 
 class Opener(private val context: Context) {
   fun openPlayStore(packageId: String): Boolean =
     context.safeStartActivity(
-      Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$packageId"))
-        .addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
+      Intent(ACTION_VIEW, Uri.parse("market://details?id=$packageId"))
+        .addFlags(FLAG_ACTIVITY_NO_HISTORY or FLAG_ACTIVITY_CLEAR_TASK or FLAG_ACTIVITY_MULTIPLE_TASK)
     )
 }

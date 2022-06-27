@@ -53,7 +53,7 @@ class EvergreenFragment : BrowseSupportFragment() {
       ))
     }
 
-    repo.evergreenConfig.observe(this, { evergreenConfig ->
+    repo.evergreenConfig.observe(this) { evergreenConfig ->
       val existingUpdatesRow =
         rowsAdapter.unmodifiableList<ListRow>().indexOfFirst { it.adapter is UpdatesObjectAdapter }
       if (existingUpdatesRow != -1) {
@@ -67,9 +67,9 @@ class EvergreenFragment : BrowseSupportFragment() {
             dialogFragment.show(requireFragmentManager(), tag)
           })
       )
-    })
+    }
 
-    repo.errors.observe(this, { fetchError ->
+    repo.errors.observe(this) { fetchError ->
       requireFragmentManager().beginTransaction()
         .replace(android.R.id.content, ErrorSupportFragment().apply {
           val context = this@EvergreenFragment.requireContext()
@@ -83,7 +83,7 @@ class EvergreenFragment : BrowseSupportFragment() {
           }
         })
         .commit()
-    })
+    }
   }
 }
 

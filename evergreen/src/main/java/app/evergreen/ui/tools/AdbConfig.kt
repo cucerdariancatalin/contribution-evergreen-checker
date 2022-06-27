@@ -41,7 +41,7 @@ class AdbConfig(private val context: Context, private val dialogOpener: DialogOp
 
   override fun doAction() {
     val wifiManager = context.applicationContext.getSystemService(WIFI_SERVICE) as WifiManager
-    @Suppress("DEPRECATION") val ipAddr = formatIpAddress(wifiManager.getConnectionInfo().getIpAddress());
+    @Suppress("DEPRECATION") val ipAddr = formatIpAddress(wifiManager.connectionInfo.ipAddress)
     val adbPort = systemProp.read("service.adb.tcp.port")
     val adbEndpoint = "$ipAddr:$adbPort"
 

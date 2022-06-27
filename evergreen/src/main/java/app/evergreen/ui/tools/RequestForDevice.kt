@@ -16,7 +16,10 @@ package app.evergreen.ui.tools
 
 import android.content.Context
 import android.graphics.drawable.Drawable
-import android.os.Build.*
+import android.os.Build.BRAND
+import android.os.Build.DEVICE
+import android.os.Build.MODEL
+import android.os.Build.PRODUCT
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.graphics.drawable.toDrawable
 import app.evergreen.R
@@ -46,9 +49,5 @@ class RequestForDevice(private val context: Context, private val dialogOpener: D
         ).toString()
       ), QrCodeFragment.TAG
     )
-  }
-
-  companion object {
-    private const val TAG = "RequestForDevice"
   }
 }

@@ -17,7 +17,11 @@ package app.evergreen.ui.tools
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.view.ViewGroup
-import androidx.leanback.widget.*
+import androidx.leanback.widget.BaseCardView
+import androidx.leanback.widget.ImageCardView
+import androidx.leanback.widget.ObjectAdapter
+import androidx.leanback.widget.Presenter
+import androidx.leanback.widget.PresenterSelector
 import app.evergreen.R
 import app.evergreen.extensions.color
 import app.evergreen.ui.DialogOpener
@@ -43,16 +47,14 @@ class ToolsObjectAdapter(private val context: Context, private val dialogOpener:
 }
 
 private class ToolsPresenter : Presenter() {
-  override fun onCreateViewHolder(parent: ViewGroup): ViewHolder {
-    return ViewHolder(ImageCardView(parent.context).apply {
-      setMainImageDimensions(MAIN_IMAGE_SIZE_DP, MAIN_IMAGE_SIZE_DP)
-      isFocusable = true
-      isFocusableInTouchMode = true
-      cardType = BaseCardView.CARD_TYPE_INFO_UNDER_WITH_EXTRA
-      infoVisibility = BaseCardView.CARD_REGION_VISIBLE_ALWAYS
-      setBackgroundColor(context.color(R.color.grey_700))
-    })
-  }
+  override fun onCreateViewHolder(parent: ViewGroup) = ViewHolder(ImageCardView(parent.context).apply {
+    setMainImageDimensions(MAIN_IMAGE_SIZE_DP, MAIN_IMAGE_SIZE_DP)
+    isFocusable = true
+    isFocusableInTouchMode = true
+    cardType = BaseCardView.CARD_TYPE_INFO_UNDER_WITH_EXTRA
+    infoVisibility = BaseCardView.CARD_REGION_VISIBLE_ALWAYS
+    setBackgroundColor(context.color(R.color.grey_700))
+  })
 
   override fun onBindViewHolder(viewHolder: ViewHolder, item: Any) {
     val imageCardView: ImageCardView = viewHolder.view as ImageCardView

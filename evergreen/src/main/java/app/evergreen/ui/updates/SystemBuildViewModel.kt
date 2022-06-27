@@ -22,9 +22,7 @@ import app.evergreen.config.Updatable
 import app.evergreen.extensions.drawable
 import app.evergreen.extensions.safeStartActivity
 
-class SystemBuildViewModel(context: Context, updatable: Updatable) :
-  AbstractUpdatableViewModel(context, updatable) {
-
+class SystemBuildViewModel(context: Context, updatable: Updatable) : AbstractUpdatableViewModel(context, updatable) {
   override val installedVersion: String?
     get() = Build.DISPLAY
 

@@ -21,66 +21,65 @@ import android.graphics.drawable.Drawable
 import android.os.Looper
 import android.util.Log
 import android.widget.Toast
+import android.widget.Toast.LENGTH_LONG
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import app.evergreen.BuildConfig
+import app.evergreen.BuildConfig.DEBUG
 import app.evergreen.R
+import java.lang.Thread.currentThread
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 fun Context.toast(message: String) {
-  if (BuildConfig.DEBUG) {
+  if (DEBUG) {
     Log.e("Toast", message)
   }
-  if (Thread.currentThread() === Looper.getMainLooper().thread) {
+  if (currentThread() === Looper.getMainLooper().thread) {
     // Toasts can only be shown from the main thread.
-    Toast.makeText(this.applicationContext, message, Toast.LENGTH_LONG).show()
+    Toast.makeText(applicationContext, message, LENGTH_LONG).show()
   } else {
-    val context = this
     CoroutineScope(Dispatchers.Main).launch {
-      Toast.makeText(context.applicationContext, message, Toast.LENGTH_LONG).show()
+      Toast.makeText(applicationContext, message, LENGTH_LONG).show()
     }
   }
 }
 
 fun Context.toast(@StringRes message: Int) = toast(getString(message))
 
-fun Context.safeStartActivity(intent: Intent): Boolean {
-  return try {
-    startActivity(intent)
-    true
+fun Context.safeStartActivity(intent: Intent): Boolean = try {
+  startActivity(intent)
+  true
 
-  } catch (e: ActivityNotFoundException) {
-    // If there was no matching app to handle this intent, then try the browser_fallback_url.
-    val browserFallbackUrl = intent.getStringExtra("browser_fallback_url")
-    if (browserFallbackUrl != null) {
-      safeStartActivity(Intent.parseUri(browserFallbackUrl, 0 /* flags */))
-    } else {
-      // [Intent.createChooser] will show a bottom-sheet with a “No app can handle this action” message.
-      startActivity(Intent.createChooser(intent, null))
-      false
-    }
-
-  } catch (e: SecurityException) {
-    toast(e.localizedMessage ?: e.message ?: getString(R.string.unknown))
+} catch (e: ActivityNotFoundException) {
+  // If there was no matching app to handle this intent, then try the browser_fallback_url.
+  val browserFallbackUrl = intent.getStringExtra("browser_fallback_url")
+  if (browserFallbackUrl != null) {
+    safeStartActivity(Intent.parseUri(browserFallbackUrl, 0 /* flags */))
+  } else {
+    // [Intent.createChooser] will show a bottom-sheet with a “No app can handle this action” message.
+    startActivity(Intent.createChooser(intent, null))
     false
+  }
 
-  } catch (e: RuntimeException) {
-    // If the first attempt failed because this Context is not an Activity, then try again with the explicit flag to
-    // create a new task, but only if that flag doesn’t already exist, otherwise this will cause a stack overflow.
-    if (intent.flags and Intent.FLAG_ACTIVITY_NEW_TASK != Intent.FLAG_ACTIVITY_NEW_TASK) {
-      safeStartActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
-    } else {
-      false
-    }
+} catch (e: SecurityException) {
+  toast(e.localizedMessage ?: e.message ?: getString(R.string.unknown))
+  false
+
+} catch (e: RuntimeException) {
+  // If the first attempt failed because this Context is not an Activity, then try again with the explicit flag to
+  // create a new task, but only if that flag doesn’t already exist, otherwise this will cause a stack overflow.
+  if (intent.flags and Intent.FLAG_ACTIVITY_NEW_TASK != Intent.FLAG_ACTIVITY_NEW_TASK) {
+    safeStartActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+  } else {
+    false
   }
 }
 
-fun Context.color(@ColorRes color: Int) = ContextCompat.getColor(this, color)
+fun Context.color(@ColorRes color: Int): Int = ContextCompat.getColor(this, color)
 
 fun Context.drawable(@DrawableRes drawableRes: Int): Drawable? =
   ResourcesCompat.getDrawable(resources, drawableRes, null)

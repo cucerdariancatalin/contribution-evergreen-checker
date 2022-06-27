@@ -27,9 +27,8 @@ import coil.load
 import java.net.URLEncoder.encode
 
 class QrCodeFragment : DialogFragment() {
-  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-    return inflater.inflate(R.layout.fragment_qr_code, container, false)
-  }
+  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?) =
+    inflater.inflate(R.layout.fragment_qr_code, container, false)
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
