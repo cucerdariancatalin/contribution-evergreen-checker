@@ -92,12 +92,6 @@ The easiest way to update the config is by using the app itself.
 
 This app and its resources are distributed under the [Apache 2 License](LICENSE). The app also contains licensed components, including:
 
-Contains licensed components:
-
-- [MaterialDesignIcons.com](https://materialdesignicons.com/)
-- [Community Icons](https://github.com/Templarian/MaterialDesign)
-- [SIL Open Font License 1.1](http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web)
-
 We believe in transparency and adhere to the best practices in software development. We hope that Evergreen will enhance your Android TV experience by ensuring your apps are up to date and working correctly. If you have any issues or feedback, please don't hesitate to contact us.
 
 Contains licensed components:
